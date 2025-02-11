@@ -12,11 +12,16 @@ import (
 // rbdUseraddCmd represents the rbdUseradd command
 var rbdUseraddCmd = &cobra.Command{
 	Use:   "rbdUseradd",
-	Short: "",
-	Long:  ``,
+	Short: "rbdUseradd <user> <password> <email> <cluster> ",
+	Long: `
+	"store-test": "http://172.21.14.149:7070",
+	"ent4-store": "https://rbdwg.hwwt2.com",
+	"ent3-store": "https://rbdent3.hwwt2.com",
+	"ent3-enterprise": "https://etrbd-prd-tc.hwwt2.com",
+	"ent4-enterprise": "https://etrbd-prd.hwwt2.com",`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 3 {
-			fmt.Println("Usage: rbdUseradd <user> <password> <cluster> ")
+			fmt.Println("rbdUseradd <user> <password> <email> <cluster> ")
 			return
 		}
 
