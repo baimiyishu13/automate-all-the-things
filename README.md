@@ -14,4 +14,4 @@ Automate All The Things 的最基础版本
 
 请谨慎使用它！
 
-<p title="Thanos" align="center"> <img width="500" src="./images/dgB9Olt.jpeg"> </p>
+<p title="Thanos" align="center"> <img src="./images/aa.png"> </p>
