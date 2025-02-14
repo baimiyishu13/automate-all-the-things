@@ -7,3 +7,4 @@ padded-mac
 test
 ./padded-mac
 ./.idea
+./.DS_Store
