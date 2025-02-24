@@ -1,10 +1,27 @@
+# App
+node_modules/
+
+# modd
+modd.conf
+
+# Build
+build/
+logs/
+vagrant/.vagrant/
+*.orig
+*.out
+*.log
+
+# IDEs
 .idea/
-./paddle
-./modd.conf
-paddle
-padded-mac
-.DS_Store
-test
-./padded-mac
-./.idea
-./.DS_Store
+.vscode/
+out/
+*.eml
+*.iml
+*.iws
+*.swp
+
+# Branch ghpages
+
+# Custom configuration files
+internal/rbd/config.go
