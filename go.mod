@@ -1,4 +1,4 @@
-module paddle
+module github.com/baimiyishu13/automate-all-the-things
 
 go 1.23.6
 

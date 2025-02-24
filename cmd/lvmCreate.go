@@ -4,8 +4,8 @@ Copyright © 2025 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"github.com/baimiyishu13/automate-all-the-things/internal/lvm"
 	"github.com/spf13/cobra"
-	"paddle/internal/lvm"
 )
 
 // lvmCreateCmd represents the lvmCreate command

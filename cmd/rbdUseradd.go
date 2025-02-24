@@ -5,8 +5,8 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/baimiyishu13/automate-all-the-things/internal/rbd"
 	"github.com/spf13/cobra"
-	"paddle/internal/rbd"
 )
 
 // rbdUseraddCmd represents the rbdUseradd command
