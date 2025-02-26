@@ -1,0 +1,5 @@
+{
+    "json_log": [
+        "/opt/log/nginx/json.*.log"
+    ]
+}

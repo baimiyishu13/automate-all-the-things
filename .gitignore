@@ -20,6 +20,7 @@ out/
 *.iml
 *.iws
 *.swp
+.DS_Store
 
 # Branch ghpages
 
