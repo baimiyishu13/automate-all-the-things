@@ -21,8 +21,13 @@ out/
 *.iws
 *.swp
 .DS_Store
+.test
 
 # Branch ghpages
 
 # Custom configuration files
 internal/rbd/config.go
+
+automate-all-the-things
+
+test*

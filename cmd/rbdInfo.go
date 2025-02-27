@@ -16,7 +16,7 @@ var rbdInfoCmd = &cobra.Command{
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) < 5 {
-			fmt.Println("rbdInfo sip port user \"password\" env")
+			fmt.Println("rbdInfo sip port user 'password' env")
 			return
 		}
 		sip := args[0]

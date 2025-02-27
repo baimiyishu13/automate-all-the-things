@@ -2,25 +2,23 @@ package rbdmysql
 
 import (
 	"database/sql"
+	_ "embed"
 	"encoding/csv"
 	"fmt"
-	"io/ioutil"
+	_ "github.com/go-sql-driver/mysql"
 	"log"
 	"os"
-
-	_ "github.com/go-sql-driver/mysql"
 )
 
-// executeSQLFile 函数读取并执行指定的 SQL 文件，并将结果导出到 CSV 文件
-func executeSQLFile(db *sql.DB, filePath, outputFileName string) error {
-	// 读取 SQL 文件内容
-	query, err := ioutil.ReadFile(filePath)
-	if err != nil {
-		return fmt.Errorf("读取文件失败: %v", err)
-	}
+// Embed the SQL file
+//
+//go:embed rbdinfo.sql
+var rbdinfoSQL string
 
+// executeSQLFile 函数读取并执行指定的 SQL 文件，并将结果导出到 CSV 文件
+func executeSQLFile(db *sql.DB, query string, outputFileName string) error {
 	// 执行 SQL 查询
-	rows, err := db.Query(string(query))
+	rows, err := db.Query(query)
 	if err != nil {
 		return fmt.Errorf("执行查询失败: %v", err)
 	}
@@ -69,7 +67,6 @@ func executeSQLFile(db *sql.DB, filePath, outputFileName string) error {
 		}
 
 		if err := writer.Write(record); err != nil {
-			return fmt.Errorf("写入记录到 CSV 文件失败: %v", err)
 		}
 	}
 
@@ -86,22 +83,11 @@ func RunSQL(sip, port, user, password, env string) {
 	}
 	defer db.Close()
 
-	// 根据环境参数选择要执行的 SQL 文件
-	var filePath string
-	switch env {
-	case "store-ent3":
-		filePath = "internal/rbd/rbdmysql/store_ent3.sql"
-	case "store-ent4":
-		filePath = "internal/rbd/rbdmysql/store_ent4.sql"
-	default:
-		log.Fatalf("无效的环境参数")
-	}
-
 	// 设置输出文件名
 	outputFileName := fmt.Sprintf("output_%s.csv", env)
 
 	// 执行 SQL 文件并导出结果到 CSV 文件
-	if err := executeSQLFile(db, filePath, outputFileName); err != nil {
+	if err := executeSQLFile(db, rbdinfoSQL, outputFileName); err != nil {
 		log.Fatalf("执行 SQL 文件失败: %v", err)
 	}
 
