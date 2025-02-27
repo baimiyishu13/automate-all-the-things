@@ -9,24 +9,27 @@
 Automate All The Things 的最基础版本
 
 ```sh
-(base) ➜  automate-all-the-things git:(master) ./padded-mac 
+(base) ➜  automate-all-the-things git:(main) ./automate-all-the-things 
 L 2.5
 
 Usage:
   paddle [command]
 
 Available Commands:
-  completion  Generate the autocompletion script for the specified shell
-  help        Help about any command
-  lvmCreate   lvmCreate <disk> <mountPoint> <fsType>
-  lvmExpand   lvmExpand <isLargeDisk> <expansionTarget> <selectedDisk>
-  rbdUseradd  rbdUseradd <user> <password> <email> <cluster> 
+  completion    Generate the autocompletion script for the specified shell
+  help          Help about any command
+  installDocker Install Docker with specific configurations
+  lvmCreate     lvmCreate <disk> <mountPoint> <fsType>
+  lvmExpand     lvmExpand <isLargeDisk> <expansionTarget> <selectedDisk>
+  rbdInfo       A brief description of your command
+  rbdUseradd    rbdUseradd <user> <password> <email> <cluster> 
 
 Flags:
   -h, --help     help for paddle
   -t, --toggle   Help message for toggle
 
 Use "paddle [command] --help" for more information about a command.
+
 ```
 
 
