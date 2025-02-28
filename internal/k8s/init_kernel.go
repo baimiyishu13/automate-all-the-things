@@ -1,4 +1,4 @@
-package k8s
+package main
 
 import (
 	"fmt"
@@ -129,7 +129,7 @@ func chmod(path string, mode uint32) error {
 	return syscall.Chmod(path, mode)
 }
 
-func KernelInit() {
+func main() {
 	// 临时将权限调高
 	if err := chmod(`/etc/sysctl.conf`, 0777); err != nil {
 		log.Fatalf("修改 /etc/sysctl.conf 权限失败: %v", err)
