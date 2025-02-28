@@ -32,12 +32,7 @@ func checkAndMountDataDisk() error {
 
 // 修改节点内核参数
 func modifyKernelParameters() error {
-	fmt.Println("==> 2. 修改节点内核参数")
-	// 这里假设需要修改的内核参数在/etc/sysctl.conf中
-	cmd := "echo 'net.ipv4.ip_forward = 1' >> /etc/sysctl.conf && sysctl -p"
-	if _, err := exec.Command("sh", "-c", cmd).Output(); err != nil {
-		return fmt.Errorf("修改内核参数失败: %v", err)
-	}
+	KernelInit()
 	return nil
 }
 

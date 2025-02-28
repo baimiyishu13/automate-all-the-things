@@ -11,7 +11,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "paddle",
+	Use:   "automate-all-the-things",
 	Short: "L 2.5",
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
